@@ -27,5 +27,55 @@
     "model": "llama-3.3-70b",
     "temperature": 0.7,
     "max_tokens": 4096
+  },
+  "methods": [
+    {
+      "name": "execute",
+      "description": "Execute the workflow with given input",
+      "params": {
+        "input": {
+          "type": "object",
+          "required": true,
+          "description": "Workflow input data"
+        }
+      },
+      "returns": {
+        "output": {
+          "type": "object",
+          "description": "Workflow execution result"
+        },
+        "steps": {
+          "type": "array",
+          "description": "Executed step details"
+        }
+      }
+    }
+  ],
+  "api": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "description": "Health check"
+    },
+    {
+      "method": "GET",
+      "path": "/.well-known/agent-card.json",
+      "description": "Agent discovery card"
+    },
+    {
+      "method": "GET",
+      "path": "/docs",
+      "description": "API documentation (HTML)"
+    },
+    {
+      "method": "POST",
+      "path": "/api/a2a",
+      "description": "A2A JSON-RPC 2.0 endpoint"
+    }
+  ],
+  "metadata": {
+    "author": "agenxia",
+    "source_template": null,
+    "type": "template"
   }
 }
